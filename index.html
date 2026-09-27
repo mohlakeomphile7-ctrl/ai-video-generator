@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Video Generator</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <h1>AI Video Generator</h1>
+
+      <form id="videoForm">
+        <label for="prompt">Prompt</label>
+        <textarea id="prompt" placeholder="Example: A futuristic city at sunset, flying cars, cinematic lighting"></textarea>
+
+        <label for="style">Style</label>
+        <select id="style">
+          <option value="realistic">Realistic</option>
+          <option value="anime">Anime</option>
+          <option value="3d cartoon">3D Cartoon</option>
+        </select>
+
+        <label for="duration">Duration: <span id="durationValue">5 sec</span></label>
+        <input id="duration" type="range" min="3" max="10" value="5" />
+
+        <button id="generateBtn" type="submit">Generate</button>
+      </form>
+
+      <div id="loading" class="hidden">
+        <div class="spinner"></div>
+        <p>Generating your video...</p>
+      </div>
+
+      <div id="result" class="hidden">
+        <video id="videoPlayer" controls playsinline></video>
+
+        <div class="button-row">
+          <button id="previewBtn" type="button" class="secondary-btn">Preview</button>
+          <a id="downloadBtn" class="download-btn" href="#" download>Download</a>
+        </div>
+      </div>
+    </div>
+
+    <script src="/script.js"></script>
+  </body>
+</html>
